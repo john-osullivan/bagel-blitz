@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-black font-sans transition-colors;
+}
+
+[data-theme="dark"] {
+  @apply bg-black text-white;
+}
