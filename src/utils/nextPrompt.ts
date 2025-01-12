@@ -1,4 +1,4 @@
-import { GamePlayContext, GameState, Prompt, PromptData } from "../types";
+import { GameState, Prompt, PromptData } from "../types";
 
 
 export function getNextPrompt({ promptData, activeGame}: {
