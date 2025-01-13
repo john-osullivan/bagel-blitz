@@ -11,17 +11,15 @@ function App() {
   //TODO Add a nav wrapper with a button to go home using a simplified version of logo
 
   return (
+    <GameDataProvider>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/setup" element={<GameSetup />} />
+        <Route path="/play" element={<GamePlay />} />
+        <Route path="/rules" element={<Rules />} />
+      </Routes>
+    </GameDataProvider>
 
-    <body className='m-0 font-sans'>
-      <GameDataProvider>
-        <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/setup" element={<GameSetup />} />
-          <Route path="/play" element={<GamePlay />} />
-          <Route path="/rules" element={<Rules />} />
-        </Routes>
-      </GameDataProvider>
-    </body>
   )
 }
 
