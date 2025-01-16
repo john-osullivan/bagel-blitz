@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 const RulesPage: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col items-center justify-center h-screen px-6 bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="flex flex-col items-center justify-center h-screen px-6 bg-steel-blue-200 text-black">
             <h1 className="text-4xl font-bold mb-6 text-center">The Rules of Bagel-topia</h1>
             <div className="text-lg leading-relaxed max-w-prose space-y-6">
                 <p>

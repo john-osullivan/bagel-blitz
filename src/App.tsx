@@ -1,10 +1,11 @@
 import './App.css'
 import { Routes, Route } from 'react-router';
-import Home from './components/Home';
-import GamePlay from './components/GamePlay';
-import GameSetup from './components/GameSetup';
-import Rules from './components/Rules';
+import Home from './screens/Home';
+import GamePlay from './screens/GamePlay';
+import GameSetup from './screens/GameSetup';
+import Rules from './screens/Rules';
 import { GameDataProvider } from './context/gameContext';
+import BagelNav from './components/BagelNav';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <GameDataProvider>
+      <BagelNav />
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/setup" element={<GameSetup />} />

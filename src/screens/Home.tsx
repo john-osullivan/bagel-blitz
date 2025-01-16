@@ -8,7 +8,7 @@ export function Home() {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-col items-center justify-start h-screen bg-accent text-white">
+        <div className="flex flex-col items-center justify-start h-screen bg-steel-blue-200 text-white">
             <img
                 src={logo}
                 alt="Bagel Blitz logo"
@@ -29,9 +29,9 @@ export function Home() {
                 {/* Continue Button (if game is in progress) */}
                 {gameInProgress && (
                     <button
-                        onClick={() => navigate("/game")}
+                        onClick={() => navigate("/play")}
                         className="bg-secondary text-white font-bold py-4 px-6 rounded hover:bg-primary transition flex-1"
-                        >
+                    >
                         Resume Game
                     </button>
                 )}

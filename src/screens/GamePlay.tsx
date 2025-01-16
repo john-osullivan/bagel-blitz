@@ -1,10 +1,11 @@
 import { useGameContext } from '../context/gameContext';
-import PromptDisplay from './PromptDisplay';
+// import { Badge } from '../components/ui/badge';
+import PromptDisplay from '../components/PromptDisplay';
 
 export function GamePlay() {
-  const gameScreenStyles = 'flex flex-col h-screen p-4 bg-accent text-white';
-  const gameHeaderStyles = 'flex justify-between text-sm mb-4';
-  const continueStyles = '"mt-4 mx-auto bg-primary text-black text-lg font-bold py-2 px-4 rounded hover:bg-secondary transition';
+  const gameScreenStyles = 'flex flex-col h-screen p-4 bg-steel-blue-200 text-white';
+  // const gameHeaderStyles = 'flex justify-between text-sm p-1 mb-4 bg-slate-100 border-accent border-2 rounded';
+  const continueStyles = 'w-full mt-4 mx-auto bg-primary text-black text-lg font-bold py-2 px-4 rounded hover:bg-secondary transition';
 
   const { continueGame, activeGame } = useGameContext();
 
@@ -12,16 +13,18 @@ export function GamePlay() {
     throw new Error('No active game found!');
   }
   const { currentPrompt } = activeGame;
-  const { category, prompt } = currentPrompt;
+  const { prompt, category } = currentPrompt;
   return (
     <div className={gameScreenStyles}>
-      <div className={gameHeaderStyles}>
+      {/* <div className={gameHeaderStyles}>
         {activeGame.players && activeGame.currentPlayer && (
           <span className="player-name">{activeGame.currentPlayer}</span>
         )}
-        <span className="category">{category}</span>
-      </div>
-      <PromptDisplay prompt={prompt} />
+        <Badge color='pink' className='text-2xl'>
+          <span className='text-2xl'>{category}</span>
+        </Badge>
+      </div> */}
+      <PromptDisplay {...{ prompt, category }} />
       <button className={continueStyles} onClick={continueGame}>
         Continue
       </button>
