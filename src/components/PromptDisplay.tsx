@@ -73,7 +73,7 @@ const PromptDisplay: React.FC<PromptDisplayProps> = ({ prompt, category }) => {
       </div>
       <div
         ref={containerRef}
-        className={clsx(sharedBoxStyles, "flex items-center bg-slate-100 text-slate-800 justify-center h-[60vh] p-4 overflow-auto border-primary-shade-500 border-4 rounded-b-lg")}
+        className={clsx(sharedBoxStyles, "flex items-center bg-slate-100 text-slate-800 justify-center h-[60vh] p-4 overflow-auto border-primary-shade-500 border-8 rounded-b-lg")}
       >
 
         <p
