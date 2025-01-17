@@ -45,7 +45,7 @@ const PromptDisplay: React.FC<PromptDisplayProps> = ({ prompt, category }) => {
     document.body.removeChild(tempElement);
 
     // Set font size to one step below the overshot value
-    const finalFontSize = Math.max(16, currentFontSize - 5);
+    const finalFontSize = Math.max(16, currentFontSize - 14);
     console.debug("Final font size:", finalFontSize);
     setFontSize(finalFontSize);
   };

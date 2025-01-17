@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "backupPrompts": "npx tsx ./src/utils/backupPrompts.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
