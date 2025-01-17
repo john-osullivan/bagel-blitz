@@ -1,27 +1,24 @@
-import { Navbar, NavbarItem, NavbarSpacer } from './ui/navbar';
+import { useLocation } from 'react-router';
+import { Navbar, NavbarItem } from './ui/navbar';
 import { useGameContext } from '../context/gameContext';
 
 export function BagelNav() {
     const { activeGame } = useGameContext();
-    // let category = null;
-    let currentPlayer = null;
-    if (activeGame) {
-        // category = (
-        //     <NavbarItem>
-        //         <span className='text-lg font-bold'>
-        //             {activeGame.currentPrompt.category}
-        //         </span>
-        //     </NavbarItem>
-        // );
-        currentPlayer = activeGame.currentPlayer ? (
-            <NavbarItem>{activeGame.currentPlayer}</NavbarItem>
-        ) : null;
-    }
+    const { pathname } = useLocation();
+    const headerTextStyles = 'bg-steel-blue-700 text-xl font-bold py-1 px-2 text-steel-blue-100 rounded';
+    const playing = activeGame && pathname == '/play';
+    const logoItemStyles = `${playing ? 'w-1/3' : 'w-full'} justify-items-end`
     return (
-        <Navbar className="bg-steel-blue-200">
-            {currentPlayer}
-            <NavbarSpacer />
-            <NavbarItem href="/">
+        <Navbar className="fixed top-0 left-0 w-full bg-steel-blue-300 py-0 h-14">
+            {playing && (
+                <NavbarItem className='w-1/3 justify-items-start'>
+                    <span className={headerTextStyles}>Round {activeGame.currentRound}</span>
+                </NavbarItem>
+            )}
+            {playing && activeGame?.currentPlayer && (
+                <NavbarItem className='w-1/3 justify-items-center'><span className={headerTextStyles}>{activeGame.currentPlayer}</span></NavbarItem>
+            )}
+            <NavbarItem href="/" className={logoItemStyles}>
                 <img src="/simple-bagel-blitz-fullsize.png" alt="Bagel Blitz" className="h-10" />
             </NavbarItem>
         </Navbar>

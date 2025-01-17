@@ -14,7 +14,11 @@ export function getNextPrompt({ promptData, activeGame }: {
     const availableNextPrompts = prompts[nextCategory].filter(
         prompt => !previousPrompts.some((prev) => prev.prompt == prompt.prompt)
     );
-    return randomElt(availableNextPrompts);
+    if (availableNextPrompts.length == 0) {
+        return randomElt(prompts[randomElt(categories)]);
+    } else {
+        return randomElt(availableNextPrompts);
+    }
 };
 
 export function nextElt(elts: string[], current: string): string {

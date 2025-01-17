@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router';
 const RulesPage: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col items-center justify-center h-screen px-6 bg-steel-blue-200 text-black">
-            <h1 className="text-4xl font-bold mb-6 text-center">The Rules of Bagel-topia</h1>
-            <div className="text-lg leading-relaxed max-w-prose space-y-6">
+        <div className="flex flex-col items-center min-h-screen h-[100%] lg:px-6 px-2 bg-steel-blue-200 text-black">
+            <h1 className="text-4xl lg:mt-[16vh] mt-[8vh] font-bold mb-6 text-center">The Rules of Bagel-topia</h1>
+            <div className="text-lg leading-relaxed max-w-prose space-y-2">
                 <p>
                     The game is <strong>Bagel Blitz</strong>. It celebrates mutual
                     understanding and absurdly fast connection under a temple of JJ and
@@ -44,7 +44,7 @@ const RulesPage: React.FC = () => {
             </div>
             <button
                 onClick={() => navigate("/")}
-                className="mt-8 max-w-prose w-full bg-primary text-black font-bold py-4 px-8 rounded hover:bg-secondary transition"
+                className="my-8 max-w-prose w-full bg-primary text-black font-bold py-4 px-8 rounded hover:bg-secondary transition"
             >
                 Home
             </button>

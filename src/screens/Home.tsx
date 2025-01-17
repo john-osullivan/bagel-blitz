@@ -12,7 +12,7 @@ export function Home() {
             <img
                 src={logo}
                 alt="Bagel Blitz logo"
-                className="w-2/3 sm:w-9/10 max-w-md mt-[20vh]"
+                className="w-2/3 sm:w-9/10 max-w-md mt-16"
             />
 
             <div

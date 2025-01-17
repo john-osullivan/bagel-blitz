@@ -1,4 +1,4 @@
-export interface SerializedPrompt { 
+export interface SerializedPrompt {
     "Prompt": string;
     "Category": string;
 }
@@ -19,6 +19,7 @@ export interface GameState {
     players?: string[];
     previousPrompts: Prompt[];
     currentPrompt: Prompt;
+    currentRound: number;
     currentPlayer?: string;
 }
 
@@ -32,6 +33,6 @@ export interface GamePlayContext {
 
 export interface ActiveGamePlayContext extends GamePlayContext { activeGame: GameState };
 
-export function isActiveGame(context:GamePlayContext): context is ActiveGamePlayContext {
+export function isActiveGame(context: GamePlayContext): context is ActiveGamePlayContext {
     return 'activeGame' in context;
 }   

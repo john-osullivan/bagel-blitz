@@ -3,9 +3,9 @@ import { useGameContext } from '../context/gameContext';
 import PromptDisplay from '../components/PromptDisplay';
 
 export function GamePlay() {
-  const gameScreenStyles = 'flex flex-col h-screen p-4 bg-steel-blue-200 text-white';
+  const gameScreenStyles = 'flex items-center flex-col h-screen pt-24 p-4 bg-steel-blue-200 text-white';
   // const gameHeaderStyles = 'flex justify-between text-sm p-1 mb-4 bg-slate-100 border-accent border-2 rounded';
-  const continueStyles = 'w-full mt-4 mx-auto bg-primary text-black text-lg font-bold py-2 px-4 rounded hover:bg-secondary transition';
+  const continueStyles = 'w-full lg:w-3/5 mt-4 mx-auto bg-primary text-black text-lg font-bold py-2 px-4 rounded hover:bg-secondary transition';
 
   const { continueGame, activeGame } = useGameContext();
 
